@@ -10,22 +10,27 @@ import AboutUs from "./pages/AboutUs";
 import Posts from "./pages/Posts";
 import SinglePost from "./pages/SinglePost";
 
+//context
+import { GlobalProvider } from './context/GlobalContext';
+
 function App() {
 
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route Component={DefaultLayout}>
-            {/* I can write index insted of path="/" ,it's the same thing */}
-            <Route index Component={HomePage} />
-            <Route path="/aboutus" Component={AboutUs} />
-            <Route path="/posts" Component={Posts} />
-            <Route path="/posts/:id" Component={SinglePost} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <GlobalProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route Component={DefaultLayout}>
+              {/* I can write index insted of path="/" ,it's the same thing */}
+              <Route index Component={HomePage} />
+              <Route path="/aboutus" Component={AboutUs} />
+              <Route path="/posts" Component={Posts} />
+              <Route path="/posts/:id" Component={SinglePost} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </GlobalProvider>
     </>
   )
 }

@@ -5,7 +5,7 @@ const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
 
-    //let's create the reaactive variables for the API calls
+    //let's create the reactive variables for the API calls
     const [posts, setPosts] = useState([]);
 
     const [post, setPost] = useState({
